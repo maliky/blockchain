@@ -8,7 +8,8 @@ from app import app
 
 # voir ici pour ngrok
 # ADRESSE_MON_SERVEUR = "http://b481ee5f4ca8.ngrok.io"
-ADRESSE_MON_SERVEUR = "http://127.0.0.1:8000"
+#ADRESSE_MON_SERVEUR = "http://127.0.0.1:8000"
+ADRESSE_MON_SERVEUR = "http://dev.numerique.ci:8000"
 
 
 @app.route("/")

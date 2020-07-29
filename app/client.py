@@ -5,11 +5,7 @@ import requests
 from flask import render_template, redirect, request
 
 from app import app
-
-# voir ici pour ngrok
-# ADRESSE_MON_SERVEUR = "http://b481ee5f4ca8.ngrok.io"
-#ADRESSE_MON_SERVEUR = "http://127.0.0.1:8000"
-ADRESSE_MON_SERVEUR = "http://dev.numerique.ci:8000"
+from app.config_locale import ADRESSE_MON_SERVEUR
 
 
 @app.route("/")
@@ -50,7 +46,7 @@ def soumettre_zone_texte():
 
 @app.route("/senregistrer", methods=["POST"])
 def envoyer_demande_enregistrement():
-    adresse_noeud_existant = request.form['adresse_denregistrement']
+    adresse_noeud_existant = request.form["adresse_denregistrement"]
     requests.post(
         f"{adresse_noeud_existant}/senregistrer_aupres",
         json={"adresse": ADRESSE_MON_SERVEUR},
